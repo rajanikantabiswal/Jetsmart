@@ -55,12 +55,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.php" class="active">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="services.php">Services</a></li>
-          <li><a href="portfolio.php">Portfolio</a></li>
-          <li><a href="team.php">Team</a></li>
-          <li><a href="blog.php">Blog</a></li>
+          <li><a href="index.php" class="menu-item">Home</a></li>
+          <li><a href="about.php" class="menu-item">About</a></li>
+          <li><a href="services.php" class="menu-item">Services</a></li>
+          <li><a href="portfolio.php" class="menu-item">Portfolio</a></li>
+          <li><a href="team.php" class="menu-item">Team</a></li>
+          <li><a href="blog.php" class="menu-item">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -78,7 +78,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="contact.php" class="menu-item">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 

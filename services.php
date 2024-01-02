@@ -23,6 +23,7 @@ include "header.php";
 
         <div class="section-header">
           <h2>Our Services</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet enim ex commodi molestiae. Corrupti eaque quo aperiam repellat est itaque facilis incidunt enim asperiores veritatis? Quas cumque harum earum incidunt!</p>
 
         </div>
 

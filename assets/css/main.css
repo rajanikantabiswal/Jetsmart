@@ -538,13 +538,19 @@ section {
 
 .hero h2 {
   margin: 0;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
   font-family: var(--font-secondary);
 }
-
+.hero h3{
+  font-size: 38px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  font-family: var(--font-secondary);
+}
 .hero blockquote {
   color: #fff;
   padding-left: 20px;
@@ -730,7 +736,17 @@ section {
 .services-list .service-item {
   position: relative;
 }
+.services-list .section-header p{
+  margin: 30px auto;
+  color: #297a6a;
+  width: 70%;
+}
 
+@media only screen and (max-width: 767px) {
+  .services-list .section-header p {
+    width: 100%;
+  }
+}
 .services-list .service-item .icon i {
   font-size: 32px;
   line-height: 0;

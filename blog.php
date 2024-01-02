@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+include "db.php";
 ?>
   <main id="main">
 
@@ -25,8 +26,45 @@ include "header.php";
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 
             <div class="row gy-5 posts-list">
+            <?php
+// Assuming you have a database connection established
+// Fetch blog posts from the database
+$query = "SELECT * FROM posts ORDER BY created_at DESC"; // You might want to adjust this query based on your needs
+$result = mysqli_query($conn, $query);
 
-              <div class="col-lg-6">
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Fetch data for each post
+        $postId = $row['id'];
+        $title = $row['title'];
+        $imageUrl = $row['image_url'];
+        $content = $row['content'];
+        $createdDate = $row['created_at'];
+        $limitedContent = strlen($content) > 100 ? substr($content, 0, 100) . "..." : $content;
+
+
+        // HTML structure for each blog post
+        echo '<div class="col-lg-6">';
+        echo '<article class="d-flex flex-column">';
+        echo '<div class="post-img">';
+        echo '<img src="admin/' . $imageUrl . '" alt="" class="img-fluid">';
+        echo '</div>';
+        echo '<h2 class="title"><a href="blog-details.php?id=' . $postId . '">' . $title . '</a></h2>';
+        echo '<div class="meta-top"><ul>';
+        echo '<li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.php?id=' . $postId . '"><time datetime="' . $createdDate . '">' . date('M j, Y', strtotime($createdDate)) . '</time></a></li>';
+        echo '</ul></div>';
+        echo '<div class="content"><p>' . $limitedContent . '</p></div>';
+        echo '<div class="read-more mt-auto align-self-start"><a href="blog-details.php?id=' . $postId . '">Read More <i class="bi bi-arrow-right"></i></a></div>';
+        echo '</article>';
+        echo '</div>';
+    }
+} else {
+    echo "No blog posts found";
+}
+
+?>
+
+              <!-- <div class="col-lg-6">
                 <article class="d-flex flex-column">
 
                   <div class="post-img">
@@ -34,14 +72,12 @@ include "header.php";
                   </div>
 
                   <h2 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                    <a href="blog-details.php">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
                   </h2>
 
                   <div class="meta-top">
                     <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.php"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
                     </ul>
                   </div>
 
@@ -51,172 +87,15 @@ include "header.php";
                     </p>
                   </div>
 
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
+                  <div class="read-more mt-auto align-self-start">
+                    <a href="blog-details.php">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
 
                 </article>
-              </div><!-- End post list item -->
+              </div> -->
+              <!-- End post list item -->
 
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
 
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
 
             </div><!-- End blog posts list -->
 
@@ -258,47 +137,34 @@ include "header.php";
                 <h3 class="sidebar-title">Recent Posts</h3>
 
                 <div class="mt-3">
+                <?php
+        // Assuming you have a database connection established
+        $queryRecentPosts = "SELECT * FROM posts ORDER BY created_at DESC LIMIT 5"; // Change the LIMIT as per your requirement
+        $resultRecentPosts = mysqli_query($conn, $queryRecentPosts);
 
-                  <div class="post-item mt-3">
-                    <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Nihil blanditiis at in nihil autem</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
+        if (mysqli_num_rows($resultRecentPosts) > 0) {
+            while ($rowRecentPosts = mysqli_fetch_assoc($resultRecentPosts)) {
+                $postId = $rowRecentPosts['id'];
+                $imageUrl = $rowRecentPosts['image_url'];
+                $postTitle = $rowRecentPosts['title'];
+                $postDate = $rowRecentPosts['created_at'];
+                $shortTitle = strlen($postTitle) > 30 ? substr($postTitle, 0, 30) . "..." : $postTitle;
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Quidem autem et impedit</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
+                echo '<div class="post-item mt-3">';
+                echo '<img src="admin/' . $imageUrl . '" alt="" class="flex-shrink-0 " style="height: 3rem;">';
+                echo '<div>';
+                echo '<h4 class="h5"><a href="blog-details.php?id=' . $postId . '">' . $shortTitle . '</a></h4>';
+                echo '<time datetime="' . $postDate . '">' . date('M j, Y', strtotime($postDate)) . '</time>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No recent posts found</p>';
+        }
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Laborum corporis quo dara net para</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
-
+        // Close the database connection
+        mysqli_close($conn);
+        ?>
                 </div>
 
               </div><!-- End sidebar recent posts-->

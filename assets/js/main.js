@@ -28,6 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+    // Get the current URL
+    var currentPage = window.location.href;
+
+    // Get all menu items
+    var menuItems = document.querySelectorAll('.menu-item');
+
+    // Loop through each menu item to check if its href matches the current URL
+    menuItems.forEach(function(item) {
+      var link = item.href;
+      if (currentPage === link) {
+        item.classList.add('active'); // Add 'active' class if the URL matches
+      }
+    });
+
   /**
    * Mobile nav toggle
    */
