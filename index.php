@@ -300,7 +300,7 @@ include "header.php";
         ?>
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="post-box">
-                <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
+                <div class="post-img"><img src="admin/<?php echo $imageUrl ?>" class="img-fluid" alt=""></div>
                 <div class="meta">
                   <span>
                     <a href="blog-details.php?id=<?= $postId ?>">

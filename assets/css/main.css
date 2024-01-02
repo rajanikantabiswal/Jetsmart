@@ -920,10 +920,12 @@ section {
 .recent-posts .post-box .post-img {
   overflow: hidden;
   position: relative;
+  height: 30vh;
 }
 
 .recent-posts .post-box .post-img img {
   transition: 0.5s;
+  height: 30vh;
 }
 
 .recent-posts .post-box .meta {
