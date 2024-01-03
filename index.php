@@ -285,18 +285,17 @@ include "header.php";
 
         <?php
         include "db.php";
-        $query = "SELECT * FROM posts ORDER BY created_at DESC"; // You might want to adjust this query based on your needs
+        $query = "SELECT * FROM posts ORDER BY created_at DESC"; 
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-            // Fetch data for each post
-            $postId = $row['id'];
-            $title = $row['title'];
-            $imageUrl = $row['image_url'];
-            $content = $row['content'];
-            $createdDate = $row['created_at'];
-            $limitedContent = strlen($content) > 100 ? substr($content, 0, 100) . "..." : $content;
+            while ($row = mysqli_fetch_assoc($result)) {
+                $postId = $row['id'];
+                $title = $row['title'];
+                $imageUrl = $row['image_url'];
+                $content = $row['content'];
+                $createdDate = $row['created_at'];
+                $limitedContent = strlen($content) > 100 ? substr($content, 0, 100) . "..." : $content;
         ?>
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="post-box">
