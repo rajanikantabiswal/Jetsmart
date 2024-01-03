@@ -311,7 +311,7 @@ include "header.php";
                 </div>
                 <h3 class="post-title"><?php echo "$title" ?></h3>
                 <p><?php echo "$limitedContent" ?></p>
-                <a href="blog-details.php" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <a href="blog-details.php?id=<?php echo $postId?>" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
         <?php

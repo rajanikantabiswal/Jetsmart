@@ -7,7 +7,8 @@ $imageUrl = ''; // Define a variable to store the image URL
 
 
 // Generate a unique filename for the uploaded image
-function generateUniqueFileName($originalName) {
+function generateUniqueFileName($originalName)
+{
     $extension = pathinfo($originalName, PATHINFO_EXTENSION);
     $timestamp = time();
     $randomString = bin2hex(random_bytes(8)); // Generates a random string of 16 characters
@@ -27,13 +28,16 @@ if ($_FILES['image']['size'] > 0) {
 }
 
 // Insert post data into the database (assuming table name is 'posts')
-$sql = "INSERT INTO posts (title, content, image_url) VALUES ('$title', '$content', '$imageUrl')";
+$sql = "INSERT INTO posts (title, content, image_url) VALUES (?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sss", $title, $content, $imageUrl);
 
-if ($conn->query($sql) === TRUE) {
+if ($stmt->execute()) {
     echo "New post created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $stmt->error;
 }
 
+$stmt->close();
 $conn->close();
 ?>
