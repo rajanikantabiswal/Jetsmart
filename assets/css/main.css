@@ -176,9 +176,10 @@ section {
 }
 
 .scroll-top:hover {
-  background: rgba(86, 184, 230, 0.8);
-  color: #fff;
+  background: rgba(60, 179, 113, 0.8); /* Greenish background */
+  color: #fff; /* White text color */
 }
+
 
 .scroll-top.active {
   visibility: visible;
@@ -439,13 +440,14 @@ section {
   }
 
   .navbar .dropdown ul,
-  .navbar .dropdown .dropdown ul {
-    position: static;
-    display: none;
-    padding: 10px 0;
-    margin: 10px 20px;
-    background-color: rgba(20, 35, 51, 0.6);
-  }
+.navbar .dropdown .dropdown ul {
+  position: static;
+  display: none;
+  padding: 10px 0;
+  margin: 10px 20px;
+  background-color: rgba(60, 179, 113, 0.6); /* Greenish shade */
+}
+
 
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
@@ -484,11 +486,11 @@ section {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(27, 47, 69, 0.7);
+    background: rgba(60, 179, 113, 0.7); /* Green shade */
     z-index: 9996;
   }
+  
 }
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -516,15 +518,17 @@ section {
 .hero:before {
   position: absolute;
   content: "";
-  background: rgba(27, 47, 69, 0.6);
+  background: rgba(10, 63, 34, 0.278); /* Green shade */
   inset: 0;
 }
 
+
 @media (max-width: 1034px) {
   .hero:before {
-    background: rgba(27, 47, 69, 0.7);
+    background: rgba(60, 179, 113, 0.7); /* Green shade */
   }
 }
+
 
 .hero .container {
   z-index: 1;
@@ -574,8 +578,9 @@ section {
 }
 
 .hero .btn-get-started:hover {
-  background: rgba(86, 184, 230, 0.8);
+  background: rgba(60, 179, 113, 0.8); /* Green shade */
 }
+
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -598,8 +603,9 @@ section {
 }
 
 .hero .btn-watch-video:hover i {
-  color: #82cbed;
+  color: #60b371; /* Green accent color */
 }
+
 
 @media (max-width: 640px) {
   .hero h2 {
@@ -955,8 +961,9 @@ section {
 
 .recent-posts .post-box p {
   margin: 15px 0 0 0;
-  color: rgba(27, 47, 69, 0.7);
+  color: rgba(60, 179, 113, 0.7); /* Green color */
 }
+
 
 .recent-posts .post-box .readmore {
   display: flex;
@@ -1266,10 +1273,11 @@ section {
   right: 50px;
   font-size: 24px;
   top: calc(50% - 14px);
-  color: rgba(27, 47, 69, 0.7);
+  color: rgba(60, 179, 113, 0.7); /* Green color */
   transition: 0.3s;
   line-height: 0;
 }
+
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
@@ -1532,8 +1540,9 @@ section {
 
 .blog .posts-list .meta-top {
   margin-top: 20px;
-  color: #467ab3;
+  color: #2e6c39; /* New color for the text */
 }
+
 
 .blog .posts-list .meta-top ul {
   display: flex;
@@ -1552,15 +1561,16 @@ section {
   font-size: 16px;
   margin-right: 8px;
   line-height: 0;
-  color: rgba(86, 184, 230, 0.8);
+  color: rgba(60, 179, 113, 0.8); /* Green color for icons */
 }
 
 .blog .posts-list .meta-top a {
-  color: #467ab3;
+  color: #2e6c39; /* Greenish color for links */
   font-size: 14px;
   display: inline-block;
   line-height: 1;
 }
+
 
 .blog .posts-list .content {
   margin-top: 20px;
@@ -1661,7 +1671,7 @@ section {
   font-size: 16px;
   margin-right: 8px;
   line-height: 0;
-  color: rgba(86, 184, 230, 0.8);
+  color: rgba(60, 179, 113, 0.8); /* Green color */
 }
 
 .blog .blog-details .meta-top a {
@@ -1815,7 +1825,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: rgba(86, 184, 230, 0.8);
+  background: rgba(60, 179, 113, 0.8); /* Green color */
 }
 
 .blog .sidebar .categories ul {
@@ -1996,8 +2006,9 @@ section {
 
 .blog .comments .reply-form input:focus {
   box-shadow: none;
-  border-color: rgba(86, 184, 230, 0.8);
+  border-color: rgba(60, 179, 113, 0.8); /* Green color */
 }
+
 
 .blog .comments .reply-form textarea {
   border-radius: 4px;
@@ -2007,7 +2018,7 @@ section {
 
 .blog .comments .reply-form textarea:focus {
   box-shadow: none;
-  border-color: rgba(86, 184, 230, 0.8);
+  border-color: rgba(60, 179, 113, 0.8); /* Green color */
 }
 
 .blog .comments .reply-form .form-group {
@@ -2130,7 +2141,7 @@ section {
 .footer .footer-content h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #297a6a;
+  color: #2e8540; /* Green color */
   position: relative;
   padding-bottom: 12px;
 }

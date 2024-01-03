@@ -7,7 +7,7 @@
         <a href="index.php" class="logo d-flex align-items-center">
           <img src="assets/img/Jetsmart-dark-logo.png" alt="Jetsmart Logo">
         </a>
-        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+        <p>We offers highly qualitative, technical and innovated advisory services to enterprises and organisms, at National and Regional level. The growth and the operation of the company are found in the basic corporate principle: “Quality, Effectiveness and Adaptability to the needs of market and technological evolution”.</p>
         <div class="social-links d-flex  mt-3">
           <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
           <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -19,11 +19,11 @@
       <div class="col-lg-2 col-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><i class="bi bi-dash"></i> <a href="#">Home</a></li>
           <li><i class="bi bi-dash"></i> <a href="#">About us</a></li>
           <li><i class="bi bi-dash"></i> <a href="#">Services</a></li>
-          <li><i class="bi bi-dash"></i> <a href="#">Terms of service</a></li>
-          <li><i class="bi bi-dash"></i> <a href="#">Privacy policy</a></li>
+          <li><i class="bi bi-dash"></i> <a href="#">Team</a></li>
+          <li><i class="bi bi-dash"></i> <a href="#">Blogs</a></li>
+          <li><i class="bi bi-dash"></i> <a href="#">Contact</a></li>
         </ul>
       </div>
 
@@ -41,11 +41,9 @@
       <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
         <h4>Contact Us</h4>
         <p>
-          A108 Adam Street <br>
-          New York, NY 535022<br>
-          United States <br><br>
-          <strong>Phone:</strong> +1 5589 55488 55<br>
-          <strong>Email:</strong> info@example.com<br>
+        2170/4071, Ravi Talkies Road, 751002 <br><br>
+          <strong>Phone:</strong> +91 8338899940<br>
+          <strong>Email:</strong> info@jetsmartis.com<br>
         </p>
 
       </div>
@@ -57,14 +55,14 @@
 <div class="footer-legal">
   <div class="container">
     <div class="copyright">
-      &copy; Copyright <strong><span>Nova</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Jetsmart IT Services LLP</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nova-bootstrap-business-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">Jetsmart</a>
     </div>
   </div>
 </div>

@@ -61,7 +61,8 @@
           <!-- <li><a href="portfolio.php" class="menu-item">Portfolio</a></li> -->
           <li><a href="team.php" class="menu-item">Team</a></li>
           <li><a href="blog.php" class="menu-item">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="careers.php" class="menu-item">Careers</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -77,7 +78,7 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="contact.php" class="menu-item">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
