@@ -63,8 +63,9 @@ include "header.php";
                             </li>
                         </ul>
                     </div>
+                    <a type="button" class="btn btn-success w-30" href="#">Apply Now</a>
                 </div>
-                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-lg-5" id="application-form" data-aos="fade-up" data-aos-delay="400">
                     <h3>Apply for this job</h3>
                     <form>
                         <div class="form-row mb-2">
