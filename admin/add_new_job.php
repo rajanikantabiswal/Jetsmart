@@ -31,6 +31,10 @@
       <input type="text" class="form-control" id="companyName" name="companyName" value="Jetsmart IT Services">
     </div>
     <div class="form-group">
+      <label for="companyName">Location</label>
+      <input type="text" class="form-control" id="location" name="location">
+    </div>
+    <div class="form-group">
       <label for="salary">Salary</label>
       <input type="text" class="form-control" id="salary" name="salary">
     </div>
@@ -62,12 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jobRequirements = $_POST['jobRequirements'];
     $jobQualification = $_POST['jobQualification'];
     $companyName = $_POST['companyName'];
+    $location = $_POST['location'];
     $salary = $_POST['salary'];
     $jobStatus = $_POST['jobStatus'];
 
     // Prepare and bind the statement
-    $stmt = $conn->prepare("INSERT INTO jobs (jobTitle, jobDescription, jobRequirements, jobQualification, companyName, salary, jobStatus) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $jobTitle, $jobDescription, $jobRequirements, $jobQualification, $companyName, $salary, $jobStatus);
+    $stmt = $conn->prepare("INSERT INTO jobs (jobTitle, jobDescription, jobRequirements, jobQualification, companyName, location, salary, jobStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $jobTitle, $jobDescription, $jobRequirements, $jobQualification, $companyName, $location, $salary, $jobStatus);
 
     if ($stmt->execute()) {
         echo "New record created successfully";

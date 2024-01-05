@@ -4,12 +4,26 @@ $postId = $_GET["id"]
 ?>
 
 <main id="main">
+<?php
+          include "db.php";
+          $sql = "SELECT * FROM posts WHERE id='$postId'";
+          $result = mysqli_query($conn, $sql);
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              // Fetch data for each post
+              $postId = $row['id'];
+              $title = $row['title'];
+              $imageUrl = $row['image_url'];
+              $content = $row['content'];
+              $createdDate = $row['created_at'];
+              // $limitedContent = strlen($content) > 100 ? substr($content, 0, 100) . "..." : $content;
+          ?>
 
   <!-- ======= Breadcrumbs ======= -->
   <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/blog-header.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center">
 
-      <h2>Blog Details</h2>
+    <p class="h1 text-light"><?php echo $title ?></p>
       <ol>
         <li><a href="index.html">Home</a></li>
         <li>Blog Details</li>
@@ -25,27 +39,13 @@ $postId = $_GET["id"]
       <div class="row g-5">
 
         <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-          <?php
-          include "db.php";
-          $sql = "SELECT * FROM posts WHERE id='$postId'";
-          $result = mysqli_query($conn, $sql);
-          if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              // Fetch data for each post
-              $postId = $row['id'];
-              $title = $row['title'];
-              $imageUrl = $row['image_url'];
-              $content = $row['content'];
-              $createdDate = $row['created_at'];
-              $limitedContent = strlen($content) > 100 ? substr($content, 0, 100) . "..." : $content;
-          ?>
+         
               <article class="blog-details">
 
                 <div class="post-img">
                   <img src="admin/<?php echo $imageUrl ?>" alt="Post Image" class="img-fluid w-100 ">
                 </div>
 
-                <h2 class="title"><?php echo $title ?></h2>
 
                 <div class="meta-top">
                   <ul>

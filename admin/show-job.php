@@ -29,6 +29,7 @@ if(isset($_GET['job_id']) && is_numeric($_GET['job_id'])) {
 
         echo "<p>Qualification: {$job['jobQualification']}</p>";
         echo "<p>Company Name: {$job['companyName']}</p>";
+        echo "<p>Location: {$job['location']}</p>";
         echo "<p>Salary: {$job['salary']}</p>";
         echo "<p>Status: {$job['jobStatus']}</p>";
     } else {
