@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2024 at 06:02 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Mar 23, 2024 at 10:58 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,7 @@ CREATE TABLE `jobs` (
   `jobRequirements` text NOT NULL,
   `jobQualification` varchar(100) DEFAULT NULL,
   `companyName` varchar(100) DEFAULT 'Jetsmart IT Services',
+  `location` varchar(50) DEFAULT NULL,
   `salary` decimal(10,2) DEFAULT NULL,
   `jobStatus` enum('active','closed') DEFAULT 'active',
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp()
@@ -43,9 +44,9 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `jobTitle`, `jobDescription`, `jobRequirements`, `jobQualification`, `companyName`, `salary`, `jobStatus`, `createdAt`) VALUES
-(1, 'Web Developer', 'aaa aaa  aaa', 'aaaaa\r\nbbbb\r\nccccc\r\n', 'Any Graduate', 'Jetsmart IT Services', 1.00, 'active', '2024-01-04 17:47:23'),
-(2, 'Senior Java Developer', 'As a Senior Java Developer at [Company Name], you will play a pivotal role in the design, development, and implementation of high-performance, scalable, and reliable Java-based applications. You will be an integral part of our talented team, contributing your expertise to drive the evolution of our products and ensure their seamless functionality.', 'Bachelor’s/Master’s degree in Computer Science, Engineering, or a related field.\r\nProven experience (X years) as a Java Developer, with expertise in Java 8+.\r\nStrong knowledge of Spring Framework, Hibernate, and other related frameworks.\r\nExperience with RESTful web services and API design/development.\r\nProficiency in database design and SQL.\r\nFamiliarity with agile methodologies and DevOps practices.\r\nExcellent problem-solving skills and ability to thrive in a fast-paced environment.', 'Any Graduate', 'Jetsmart IT Services', 3000000.00, 'active', '2024-01-04 17:58:09');
+INSERT INTO `jobs` (`id`, `jobTitle`, `jobDescription`, `jobRequirements`, `jobQualification`, `companyName`, `location`, `salary`, `jobStatus`, `createdAt`) VALUES
+(1, 'Web Developer', 'aaa aaa  aaa', 'aaaaa\r\nbbbb\r\nccccc\r\n', 'Any Graduate', 'Jetsmart IT Services', NULL, 1.00, 'active', '2024-01-04 17:47:23'),
+(2, 'Senior Java Developer', 'As a Senior Java Developer at [Company Name], you will play a pivotal role in the design, development, and implementation of high-performance, scalable, and reliable Java-based applications. You will be an integral part of our talented team, contributing your expertise to drive the evolution of our products and ensure their seamless functionality.', 'Bachelor’s/Master’s degree in Computer Science, Engineering, or a related field.\r\nProven experience (X years) as a Java Developer, with expertise in Java 8+.\r\nStrong knowledge of Spring Framework, Hibernate, and other related frameworks.\r\nExperience with RESTful web services and API design/development.\r\nProficiency in database design and SQL.\r\nFamiliarity with agile methodologies and DevOps practices.\r\nExcellent problem-solving skills and ability to thrive in a fast-paced environment.', 'Any Graduate', 'Jetsmart IT Services', NULL, 3000000.00, 'active', '2024-01-04 17:58:09');
 
 -- --------------------------------------------------------
 
